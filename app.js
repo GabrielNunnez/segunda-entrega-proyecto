@@ -66,7 +66,7 @@ function leerDatosProducto(producto) {
 function carritoHTML() {
   limpiarHTML();
   articulosCarrito.forEach((producto) => {
-    const row = document.createElement("tr");
+    let row = document.createElement("tr");
     row.innerHTML = `<td>${producto.titulo}</td>
     <td>${producto.precio}</td>
     <td>${producto.cantidad}</td>
@@ -79,6 +79,6 @@ function carritoHTML() {
 function limpiarHTML() {
   contenedorCarrito.innerHTML = "";
 }
-const guardarCarrito = row
-const enJSON = JSON.stringify(row);
+const guardarCarrito = contenedorCarrito
+const enJSON = JSON.stringify(contenedorCarrito);
 localStorage.setItem("guardarCarrito", enJSON);
